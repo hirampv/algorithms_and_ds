@@ -8,13 +8,14 @@ from data_structures import SinglyLinkedListNode
 
 # Print the contents of a singly linked list
 def sll_print(ll_head):
-    values = []
+    outputStr = ""
     tmp = ll_head
     while tmp:
-        values.append(str(tmp.data))
+        outputStr += str(tmp.data) + " -> "
         tmp = tmp.next
         
-    print(' -> '.join(values))
+    outputStr += "None"
+    print(outputStr)
 
 
 # Function to append nodes at the end of a singly linked list
