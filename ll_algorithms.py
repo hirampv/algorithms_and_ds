@@ -34,7 +34,14 @@ def sll_append(ll_head, value):
         
     tmp.next = newNode
     return True
-    
+
+# The function needs to return a pointer/reference to the newly added first item
+# because otherwise it is copied by value within this function
+def sll_prepend(ll_head, value):
+    newNode = SinglyLinkedListNode(value)
+    newNode.next = ll_head
+    ll_head = newNode
+    return ll_head
     
     
 
@@ -47,6 +54,14 @@ def run():
     sll_append(llHead, 4)
     sll_append(llHead, 5)
     
+    # We call the prepend funcion, but don't assign the return value to the original llHead variable
+    # Therefore, the original list is not modified
+    sll_prepend(llHead, 0)
+    sll_print(llHead)
+    
+    # We call the prepend function and assign the return value to the original list
+    # Hence, the list gets modified
+    llHead = sll_prepend(llHead, 0)
     sll_print(llHead)
 
 
