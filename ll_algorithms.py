@@ -35,6 +35,8 @@ def sll_append(ll_head, value):
     tmp.next = newNode
     return True
 
+#ToDo: Write code to chech the objects' id inside and outside the function
+
 # The function needs to return a pointer/reference to the newly added first item
 # because otherwise it is copied by value within this function
 def sll_prepend(ll_head, value):
@@ -43,7 +45,22 @@ def sll_prepend(ll_head, value):
     ll_head = newNode
     return ll_head
     
+
+def sll_reverse(ll_head):
+    if ll_head is None or ll_head.next is None:
+        return ll_head
     
+    anchor = SinglyLinkedListNode(0)
+    anchor.next = ll_head
+    tmp = ll_head
+    
+    while tmp.next:
+        nodeToMove = tmp.next
+        tmp.next = nodeToMove.next
+        nodeToMove.next = anchor.next
+        anchor.next = nodeToMove
+
+    return anchor.next 
 
 def run():
     # Creating a linked list with just a head pointer
@@ -64,6 +81,8 @@ def run():
     llHead = sll_prepend(llHead, 0)
     sll_print(llHead)
 
+    llHead = sll_reverse(llHead)
+    sll_print(llHead)
 
 if __name__ == '__main__':
     run()
