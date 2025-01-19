@@ -31,3 +31,15 @@ class SinglyLinkedList:
             tmp = tmp.next
         print_str += "None"
         print(print_str)
+
+    def append(self, data):
+        new_node = SinglyLinkedListNode(data)
+        if self.tail is None:
+            self.head = new_node
+            self.tail = new_node
+        
+        # By having a tail pointer to the last element on the list
+        # We improve the append function's perfomrance from O(n) to O(1)
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
