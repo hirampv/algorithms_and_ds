@@ -32,6 +32,7 @@ class SinglyLinkedList:
         print_str += "None"
         print(print_str)
 
+    # append() inserts a new node at the end of the list
     def append(self, data):
         new_node = SinglyLinkedListNode(data)
         if self.tail is None:
@@ -44,6 +45,7 @@ class SinglyLinkedList:
             self.tail.next = new_node
             self.tail = new_node
 
+    # prepend() inserts a new node at the beginning of the list
     def prepend(self, data):
         new_node = SinglyLinkedListNode(data)
         if self.head is None:
@@ -53,3 +55,24 @@ class SinglyLinkedList:
         else:
             new_node.next = self.head
             self.head = new_node
+
+    # pop() method: removes the last element from the list and returns it
+    def pop(self):
+        if self.head is None:
+            return None
+        
+        if self.head is self.tail:
+            node_to_pop = self.head
+            self.head = None
+            self.tail = None
+            return node_to_pop
+        
+        tmp = self.head
+        while tmp.next is not self.tail:
+            tmp = tmp.next
+
+        node_to_pop = self.tail
+        self.tail = tmp
+        tmp.next = None
+        return node_to_pop
+
