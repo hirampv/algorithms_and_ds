@@ -7,16 +7,16 @@ def run():
     my_list.prepend(0)
     my_list.print()
 
-    print(my_list.pop().data)
+    print("Removing the element ", my_list.pop().data)
     my_list.print()
 
-    print(my_list.pop().data)
+    print("Removing the element ", my_list.pop().data)
     my_list.print()
 
-    print(my_list.pop().data)
+    print("Removing the element ", my_list.pop_first().data)
     my_list.print()
 
-    print(my_list.pop().data)
+    print("Removing the element ", my_list.pop_first().data)
     my_list.print()
 
 if __name__ == '__main__':

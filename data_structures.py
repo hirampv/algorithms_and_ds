@@ -75,4 +75,16 @@ class SinglyLinkedList:
         self.tail = tmp
         tmp.next = None
         return node_to_pop
+    
+    # pop_first() method: removes the first element from the list and returns it
+    def pop_first(self):
+        if self.head is None or self.head is self.tail:
+            return self.pop()
+
+        node_to_pop = self.head
+        self.head = self.head.next
+        node_to_pop.next = None
+        return node_to_pop
+
+
 
