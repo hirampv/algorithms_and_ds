@@ -85,6 +85,26 @@ class SinglyLinkedList:
         self.head = self.head.next
         node_to_pop.next = None
         return node_to_pop
+    
+    # remove(n) method: removes and returns the nth node from the list
+    def remove(self, n):
+        if n == 0:
+            return self.pop_first()
+
+        tmp = SinglyLinkedListNode(0)
+        tmp.next = self.head
+        for _ in range(n):
+            if not tmp.next:
+                print("index out of bounds")
+                return None
+            tmp = tmp.next
+        node_to_remove = tmp.next
+
+        tmp.next = node_to_remove.next
+        node_to_remove.next = None
+        return node_to_remove
+        
+
 
 
 
