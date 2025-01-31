@@ -104,6 +104,15 @@ class SinglyLinkedList:
         node_to_remove.next = None
         return node_to_remove
         
+    
+    def length(self):
+        length = 0
+        tmp = self.head
+        while tmp:
+            tmp = tmp.next
+            length += 1
+
+        return length
 
 
 
