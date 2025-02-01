@@ -52,7 +52,7 @@ Class representing the singly linked list.
 Example usage of the linked list:
 
 ```python
-from singly_linked_list import SinglyLinkedList
+from data_structures import SinglyLinkedList
 
 # Create a list with an initial node
 linked_list = SinglyLinkedList(10)
