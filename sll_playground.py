@@ -8,17 +8,20 @@ def run():
     my_list.prepend(0)
     my_list.print()
 
-    print(f"The list has {my_list.length()} elements")
+    print(f"The list has {my_list.get_length()} elements")
 
     print("Removing the 0th element: ", my_list.remove(0).data)
     my_list.print()
+    print(f"The list has {my_list.get_length()} elements")
 
     print("Removing the element at index 1: ", my_list.remove(1).data)
     my_list.print()
+    print(f"The list has {my_list.get_length()} elements")
 
     print("Removing the element at index 4")
     my_list.remove(4)
     my_list.print()
+    print(f"The list has {my_list.get_length()} elements")
 
 
     '''

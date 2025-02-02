@@ -75,13 +75,12 @@ linked_list.print()
 | Pop         | O(n)       |
 | Pop First   | O(1)       |
 | Remove(n)   | O(n)       |
-| Length      | O(n)       |
+| Length      | O(1)       |
 
 ## Notes / ToDo
 
 - The `remove(n)` implementation does not correctly handle empty lists.
 - The `pop()` function could be optimized for better performance.
-- The list does not maintain a length variable, so `length()` traverses the entire list each time it is called.
 
 ## Contribution
 

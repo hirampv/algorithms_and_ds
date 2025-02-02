@@ -22,6 +22,7 @@ class SinglyLinkedList:
         new_node = SinglyLinkedListNode(data)
         self.head = new_node
         self.tail = new_node
+        self.length = 1
 
     def print(self):
         tmp = self.head
@@ -45,6 +46,8 @@ class SinglyLinkedList:
             self.tail.next = new_node
             self.tail = new_node
 
+        self.length += 1
+
     # prepend() inserts a new node at the beginning of the list
     def prepend(self, data):
         new_node = SinglyLinkedListNode(data)
@@ -55,6 +58,8 @@ class SinglyLinkedList:
         else:
             new_node.next = self.head
             self.head = new_node
+
+        self.length += 1
 
     # pop() method: removes the last element from the list and returns it
     def pop(self):
@@ -74,6 +79,7 @@ class SinglyLinkedList:
         node_to_pop = self.tail
         self.tail = tmp
         tmp.next = None
+        self.length -= 1
         return node_to_pop
     
     # pop_first() method: removes the first element from the list and returns it
@@ -84,6 +90,7 @@ class SinglyLinkedList:
         node_to_pop = self.head
         self.head = self.head.next
         node_to_pop.next = None
+        self.length -= 1
         return node_to_pop
     
     # remove(n) method: removes and returns the nth node from the list
@@ -102,17 +109,19 @@ class SinglyLinkedList:
 
         tmp.next = node_to_remove.next
         node_to_remove.next = None
+        self.length -= 1
         return node_to_remove
         
     
-    def length(self):
+    def get_length(self):
+        '''
         length = 0
         tmp = self.head
         while tmp:
             tmp = tmp.next
             length += 1
-
-        return length
+        '''
+        return self.length
 
 
 
