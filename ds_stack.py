@@ -5,7 +5,7 @@ class Stack:
         newNode = SinglyLinkedListNode(value)
         self.top = newNode
 
-    def insert(self, value):
+    def push(self, value):
         newNode = SinglyLinkedListNode(value)
         if self.top is None:
             self.top = newNode
@@ -13,3 +13,13 @@ class Stack:
         else:
             newNode.next = self.top
             self.top = newNode
+
+    def pop(self):
+        if self.top is None:
+            return None
+        
+        else:
+            nodeToReturn = self.top
+            self.top = self.top.next
+            nodeToReturn.next = None
+            return nodeToReturn
