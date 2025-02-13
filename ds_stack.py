@@ -23,3 +23,20 @@ class Stack:
             self.top = self.top.next
             nodeToReturn.next = None
             return nodeToReturn
+
+
+    def print(self):
+        outputString = "Top -> "
+        tmp = self.top
+        while(tmp):
+            outputString += str(tmp.data) + " -> "
+            tmp = tmp.next
+        outputString += "None"
+        print(outputString)
+
+
+if __name__ == "__main__":
+    print("Running ds_stack.py module")
+    myStack = Stack(0)
+    myStack.push(1)
+    myStack.print()
