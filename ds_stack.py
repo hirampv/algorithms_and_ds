@@ -39,4 +39,9 @@ if __name__ == "__main__":
     print("Running ds_stack.py module")
     myStack = Stack(0)
     myStack.push(1)
+    myStack.push(2)
+    myStack.push(3)
+    myStack.print()
+
+    print("Popping element at the top: ", myStack.pop().data)
     myStack.print()
