@@ -17,9 +17,29 @@ class Queue:
             self.rear.next = newNode
             self.rear      = newNode
 
+    def dequeue(self):
+        if self.front is None:
+            return None
+        
+        nodeToReturn = self.rear        
+        
+        if self.front is self.rear:
+            self.front = None
+            self.rear  = None
+
+        else:
+            tmp = self.front
+            while tmp.next is not self.rear:
+                tmp = tmp.next
+            tmp.next = None
+
+        return nodeToReturn
+
+
 
 if __name__ == "__main__":
     myQueue = Queue(0)
     myQueue.enqueue(1)
     myQueue.enqueue(2)
     myQueue.enqueue(3)
+    myQueue.dequeue()
