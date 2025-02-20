@@ -33,7 +33,14 @@ class Queue:
 
         return nodeToReturn
     
-    
+    def print(self):
+        outputString = "Front -> "
+        tmp = self.front
+        while(tmp):
+            outputString += str(tmp.data) + " -> "
+            tmp = tmp.next
+        outputString += "Rear"
+        print(outputString)
 
 
 
@@ -42,5 +49,6 @@ if __name__ == "__main__":
     myQueue.enqueue(1)
     myQueue.enqueue(2)
     myQueue.enqueue(3)
-
+    myQueue.print()
     myQueue.dequeue()
+    myQueue.print()
