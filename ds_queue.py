@@ -21,19 +21,19 @@ class Queue:
         if self.front is None:
             return None
         
-        nodeToReturn = self.rear        
+        nodeToReturn = self.front        
         
         if self.front is self.rear:
             self.front = None
             self.rear  = None
 
         else:
-            tmp = self.front
-            while tmp.next is not self.rear:
-                tmp = tmp.next
-            tmp.next = None
+            self.front = self.front.next
+            nodeToReturn.next = None
 
         return nodeToReturn
+    
+    
 
 
 
@@ -42,4 +42,5 @@ if __name__ == "__main__":
     myQueue.enqueue(1)
     myQueue.enqueue(2)
     myQueue.enqueue(3)
+
     myQueue.dequeue()
