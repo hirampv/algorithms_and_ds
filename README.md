@@ -90,3 +90,91 @@ If you would like to improve this implementation or add new features, feel free 
 
 This project is distributed under the MIT license.
 
+
+
+# Stack Data Structure Implementation
+
+## Overview
+This module implements a **Stack** data structure using a **singly linked list**. It provides standard stack operations such as **push**, **pop**, and **print**.
+
+## Prerequisites
+The implementation depends on the `SinglyLinkedListNode` class from the `data_structures` module. Ensure this dependency is available before using this stack.
+
+## Class: `Stack`
+The `Stack` class represents a stack data structure where elements follow the **Last In, First Out (LIFO)** principle.
+
+### **Constructor**
+```python
+Stack(value)
+```
+- **Description**: Initializes a new stack with a single node.
+- **Parameters**:
+  - `value` (*any*): The initial value of the stack.
+- **Usage**:
+  ```python
+  my_stack = Stack(10)
+  ```
+
+### **Methods**
+
+#### `push(value)`
+```python
+push(value)
+```
+- **Description**: Adds a new element on top of the stack.
+- **Parameters**:
+  - `value` (*any*): The value to be added to the stack.
+- **Usage**:
+  ```python
+  my_stack.push(20)
+  ```
+
+#### `pop()`
+```python
+pop() -> SinglyLinkedListNode | None
+```
+- **Description**: Removes and returns the top element from the stack.
+- **Returns**:
+  - The top node (*SinglyLinkedListNode*) if the stack is not empty.
+  - `None` if the stack is empty.
+- **Usage**:
+  ```python
+  popped_node = my_stack.pop()
+  print(popped_node.data)  # Access the value
+  ```
+
+#### `print()`
+```python
+print()
+```
+- **Description**: Prints the current stack in the format:
+  ```
+  Top -> value1 -> value2 -> ... -> None
+  ```
+- **Usage**:
+  ```python
+  my_stack.print()
+  ```
+
+## Example Usage
+```python
+if __name__ == "__main__":
+    print("Running ds_stack.py module")
+    myStack = Stack(0)
+    myStack.push(1)
+    myStack.push(2)
+    myStack.push(3)
+    myStack.print()
+
+    print("Popping element at the top: ", myStack.pop().data)
+    myStack.print()
+```
+
+## Notes
+- The stack implementation is based on a **linked list**, so it does not have a predefined size limit.
+- Operations like `push()` and `pop()` have **O(1) time complexity**.
+- Ensure that the `data_structures` module containing `SinglyLinkedListNode` is correctly implemented and imported.
+
+## Author
+This module is part of a data structures library developed for educational and practical use cases.
+
