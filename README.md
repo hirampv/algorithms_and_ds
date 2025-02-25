@@ -178,3 +178,89 @@ if __name__ == "__main__":
 ## Author
 This module is part of a data structures library developed for educational and practical use cases.
 
+
+
+# Queue Data Structure Implementation
+
+## Overview
+This module implements a **Queue** data structure using a **singly linked list**. It provides standard queue operations such as **enqueue**, **dequeue**, and **print**.
+
+## Prerequisites
+The implementation depends on the `SinglyLinkedListNode` class from the `data_structures` module. Ensure this dependency is available before using this queue.
+
+## Class: `Queue`
+The `Queue` class represents a queue data structure where elements follow the **First In, First Out (FIFO)** principle.
+
+### **Constructor**
+```python
+Queue(value)
+```
+- **Description**: Initializes a new queue with a single node.
+- **Parameters**:
+  - `value` (*any*): The initial value of the queue.
+- **Usage**:
+  ```python
+  my_queue = Queue(10)
+  ```
+
+### **Methods**
+
+#### `enqueue(value)`
+```python
+enqueue(value)
+```
+- **Description**: Adds a new element at the rear of the queue.
+- **Parameters**:
+  - `value` (*any*): The value to be added to the queue.
+- **Usage**:
+  ```python
+  my_queue.enqueue(20)
+  ```
+
+#### `dequeue()`
+```python
+dequeue() -> SinglyLinkedListNode | None
+```
+- **Description**: Removes and returns the front element from the queue.
+- **Returns**:
+  - The front node (*SinglyLinkedListNode*) if the queue is not empty.
+  - `None` if the queue is empty.
+- **Usage**:
+  ```python
+  dequeued_node = my_queue.dequeue()
+  print(dequeued_node.data)  # Access the value
+  ```
+
+#### `print()`
+```python
+print()
+```
+- **Description**: Prints the current queue in the format:
+  ```
+  Front -> value1 -> value2 -> ... -> Rear
+  ```
+- **Usage**:
+  ```python
+  my_queue.print()
+  ```
+
+## Example Usage
+```python
+if __name__ == "__main__":
+    myQueue = Queue(0)
+    myQueue.enqueue(1)
+    myQueue.enqueue(2)
+    myQueue.enqueue(3)
+    myQueue.print()
+    myQueue.dequeue()
+    myQueue.print()
+```
+
+## Notes
+- The queue implementation is based on a **linked list**, so it does not have a predefined size limit.
+- Operations like `enqueue()` and `dequeue()` have **O(1) time complexity**.
+- Ensure that the `data_structures` module containing `SinglyLinkedListNode` is correctly implemented and imported.
+
+## Author
+This module is part of a data structures library developed for educational and practical use cases.
+
